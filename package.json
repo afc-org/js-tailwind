@@ -1,0 +1,34 @@
+{
+  "name": "@tailwindjs/tailwindjs",
+  "version": "0.1.0",
+  "description": "Dynamic components for Tailwindcss and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tailwindjs/tailwindjs.git"
+  },
+  "keywords": [
+    "javascript",
+    "vannilajs",
+    "vannila-js",
+    "tailwind",
+    "tailwindcss",
+    "package",
+    "components",
+    "framework",
+    "tailwind-framework",
+    "javascript-framework",
+    "javascript-tailwind",
+    "javascript-tailwindcss",
+    "tailwindjs"
+  ],
+  "author": "@tailwindjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tailwindjs/tailwindjs/issues"
+  },
+  "homepage": "https://github.com/tailwindjs/tailwindjs#readme"
+}
