@@ -62,8 +62,8 @@ Example usage:
   </span>
   <button
     class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 outline-none focus:outline-none opacity-50 px-5 py-3 hover:opacity-75 hover:text-black"
-data-close="alert"
-data-target="#alert-id-88325020"
+    data-close="alert"
+    data-target="#alert-id-88325020"
   >
     <span>×</span>
   </button>
