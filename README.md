@@ -41,7 +41,27 @@ Add the following CDN to your project:
 
 ## Components
 
-**Alert**
+- Alert
+- Dropdown (PopperJS)
+- Responsive Menu
+- Modal
+- Responsive Navbar
+- Popover (PopperJS)
+- Tooltip (PopperJS)
+- Tab Pills
+
+## Documentation
+
+After you have installed `@tailwindjs/tailwindjs` into your project, you can import and use our components like so:
+```
+<script src="path/to/node_module/@tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
+```
+Or, you can add it from our CDN, and no installation will be required:
+```
+<script src="https://cdn.jsdelivr.net/gh/tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
+```
+
+### Alert
 
 You need to add an `id` on the alert wrapper.
 After that, on the element that you want to add the closing action/event, you need to add
@@ -76,17 +96,6 @@ Example usage:
 - Popover (PopperJS)
 - Tooltip (PopperJS)
 - Tab Pills
-
-## Documentation
-
-After you have installed `@tailwindjs/tailwindjs` into your project, you can import and use our components like so:
-```
-<script src="path/to/node_module/@tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
-```
-Or, you can add it from our CDN, and no installation will be required:
-```
-<script src="https://cdn.jsdelivr.net/gh/tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
-```
 
 ### Styles
 
