@@ -32,9 +32,42 @@ We plan on implementing more, in the weeks to come.
 | --- | --- | --- | --- | --- |
 | <a href="https://github.com/tailwindjs/angular-tailwindjs" target="_blank">Check Angular</a>  | <a href="https://github.com/tailwindjs/tailwindjs" target="_blank">Check JavaScript</a>  | <a href="https://github.com/tailwindjs/react-tailwindjs" target="_blank">Check React</a>  | <a href="https://github.com/tailwindjs/vue-tailwindjs" target="_blank">Check VueJS</a>  | <a href="https://github.com/tailwindjs/svelte-tailwindjs" target="_blank">Check Svelte</a>  |
 
+## Quick Start
+
+Add the following CDN to your project:
+```
+<script src="https://cdn.jsdelivr.net/gh/tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
+```
+
 ## Components
 
-- Alert
+**Alert**
+You need to add an id on the alert wrapper.
+After that, on the element that you want to add the closing action/event, you need to add
+```
+data-close="alert"
+data-target="#id-of-the-wrapper"
+```
+Example usage:
+```
+<div
+  class=" px-5 py-3 border border-solid rounded relative mb-4 bg-indigo-200 text-indigo-800 border-indigo-300"
+  id="alert-id-88325020"
+>
+  <span class=""><i class="fa fa-heart"></i></span>
+  <span class="">
+    <strong class="capitalize">primary!</strong> This is a primary
+    alert—check it out!
+  </span>
+  <button
+    class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 outline-none focus:outline-none opacity-50 px-5 py-3 hover:opacity-75 hover:text-black"
+data-close="alert"
+data-target="#alert-id-88325020"
+  >
+    <span>×</span>
+  </button>
+</div>
+```
 - Dropdown (PopperJS)
 - Responsive Menu
 - Modal
@@ -42,13 +75,6 @@ We plan on implementing more, in the weeks to come.
 - Popover (PopperJS)
 - Tooltip (PopperJS)
 - Tab Pills
-
-## Quick Start
-
-Add the following CDN to your project:
-```
-<script src="https://cdn.jsdelivr.net/gh/tailwindjs/tailwindjs/dist/tailwindjs.min.js"></script>
-```
 
 ## Documentation
 
