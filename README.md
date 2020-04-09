@@ -39,14 +39,14 @@ Add the following CDN to your project:
 
 ## Components
 
-- Alert
+- [Alert](#alert)
 - Dropdown (PopperJS)
-- Responsive Menu
+- [Menu Collpase](menu-collapse)
 - Modal
-- Responsive Navbar
+- [Navbar Collpase](navbar-collapse)
 - Popover (PopperJS)
 - Tooltip (PopperJS)
-- Tab Pills
+- [Tab Pills](tab-pills)
 
 ## Documentation
 
@@ -88,9 +88,107 @@ Example usage:
 </div>
 ```
 - Dropdown (PopperJS)
-- Responsive Menu
+
+### Menu Collpase
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="collapse"
+data-target="#menu-collapse"
+```
+And on the collapse element, the following one:
+```
+id="menu-collapse"
+```
+**NOTE** you can change `menu-collapse` with any ID you would like.
+Here is a full sample code:
+```
+<div class="flex flex-wrap py-2">
+  <div class="w-full px-4">
+    <nav class="mb-2 flex flex-wrap items-center justify-between px-4 py-2 rounded bg-blue-600">
+      <div class="flex container mx-auto flex-wrap items-center justify-between px-0 lg:px-4">
+        <a class="capitalize text-xl inline-block mr-4 py-1 leading-relaxed whitespace-no-wrap text-white" href="./index.html">
+          Navbar Brand
+        </a>
+        <button class="ml-auto cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-gray-400 rounded bg-transparent block outline-none focus:outline-none text-gray-300 opacity-50 lg:hidden" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+          <span aria-hidden="true">⁝⁝⁝</span>
+        </button>
+        <div class="hidden items-center w-full lg:flex lg:w-auto flex-grow" id="navbar-collapse">
+          <ul class="lg:items-center lg:ml-auto flex flex-wrap list-none pl-0 mb-0 flex flex-col list-none pl-0 mb-0 lg:flex-row">
+            <li>
+              <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+                Simple Link
+              </a>
+            </li>
+            <li>
+              <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+                One More Simple Link
+              </a>
+            </li>
+            <li>
+              <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+                Another Simple Link
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+```
+**NOTE**: You can change the following classes `lg:hidden` (button toggler), `lg:flex lg:w-auto` (collapse element), `lg:items-center lg:ml-auto` (list wrapper) and `lg:flex-row` (list wrapper), with any available breakpoint from TailwindCSS (`sm`,`md`,`lg`,`xl`).
+**NOTE**: To check the above example, you need to set your window less then 1023px.
+
 - Modal
-- Responsive Navbar
+
+### Navbar Collpase
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="collapse"
+data-target="#navbar-collapse"
+```
+And on the collapse element, the following one:
+```
+id="navbar-collapse"
+```
+**NOTE** you can change `navbar-collapse` with any ID you would like.
+Here is a full sample code:
+```
+<nav class="mb-2 flex flex-wrap items-center justify-between px-4 py-2 bg-blue-600">
+  <div class="flex container mx-auto flex-wrap items-center justify-between px-0 lg:px-4">
+    <a class="capitalize text-xl inline-block mr-4 py-1 leading-relaxed whitespace-no-wrap text-white" href="./index.html">
+      Navbar Brand
+    </a>
+    <button class="ml-auto cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-gray-400 rounded bg-transparent block outline-none focus:outline-none text-gray-300 opacity-50 lg:hidden" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+      <span aria-hidden="true">⁝⁝⁝</span>
+    </button>
+    <div class="hidden items-center w-full lg:flex lg:w-auto flex-grow" id="navbar-collapse">
+      <ul class="lg:items-center lg:ml-auto flex flex-wrap list-none pl-0 mb-0 flex flex-col list-none pl-0 mb-0 lg:flex-row">
+        <li>
+          <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+            Simple Link
+          </a>
+        </li>
+        <li>
+          <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+            One More Simple Link
+          </a>
+        </li>
+        <li>
+          <a class="block py-2 px-2 bg-transparent no-underline text-white opacity-50 hover:opacity-75">
+            Another Simple Link
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
+**NOTE**: you can change the following classes `lg:hidden` (button toggler), `lg:flex lg:w-auto` (collapse element), `lg:items-center lg:ml-auto` (list wrapper) and `lg:flex-row` (list wrapper), with any available breakpoint from TailwindCSS (`sm`,`md`,`lg`,`xl`).
+**NOTE**: To check the above example, you need to set your window less then 1023px.
+
 - Popover (PopperJS)
 - Tooltip (PopperJS)
 
