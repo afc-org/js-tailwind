@@ -93,7 +93,103 @@ Example usage:
 - Responsive Navbar
 - Popover (PopperJS)
 - Tooltip (PopperJS)
-- Tab Pills
+
+### Tab Pills
+
+You will need an unordered list, with anchor elements as children of the list items (`ul > li > a`).
+On the anchor element you will have to add the following attributes:
+```
+data-toggle="tab"
+href="#id-of-the-content"
+class="text-white bg-blue-600" // for active elements
+class="bg-transparent text-blue-600" // for non-active elements
+```
+And on the content to by displayed alongside the tab, you will have to add the same id:
+```
+id="id-of-the-content"
+```
+Example usage:
+```
+<ul class="flex-col md:flex-row flex flex-wrap list-none pl-0 mb-0">
+  <li class="flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded text-white bg-blue-600 sm:mb-4 md:mb-0" data-toggle="tab" href="#home">
+      <i class="mr-2 fas fa-cloud-upload-alt"></i>Home
+    </a>
+  </li>
+  <li class="sm:mb-4 md:mb-0 flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded bg-transparent text-blue-600" data-toggle="tab" href="#profile">
+      <i class="mr-2 far fa-bell"></i>Profile
+    </a>
+  </li>
+  <li class="sm:mb-4 md:mb-0 flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded bg-transparent text-blue-600" data-toggle="tab" href="#message">
+      <i class="mr-2 far fa-calendar-alt"></i>Messages
+    </a>
+  </li>
+</ul>
+<div class="mt-2 relative flex flex-col min-w-0 break-words border border-solid border-gray-300 rounded">
+  <div class="p-5 flex-auto">
+    <div class="block">
+      <div class="block" id="home">
+        <p class="mb-4">
+          Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+        </p>
+        <p>
+          Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+        </p>
+      </div>
+      <div class="hidden" id="profile">
+        <p>
+          Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+        </p>
+      </div>
+      <div class="hidden" id="message">
+        <p>
+          Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+If you wish to change the active classes of the anchor elements, and the non-active classes, you can do so, by calling the initTabs function:
+```
+// initTabs(activeClasses,normalClasses)
+//  - activeClasses is for setting the classes for the active tab (anchor element)
+//  - normalClasses is for setting the classes for all the tabs (anchor elements) expect the
+// one that is currently active, if they are unset, then the default ones will be choosen
+// activeClasses = "bg-blue-600 text-white"
+// normalClasses = "text-blue-600 bg-transparent"
+(function () {
+  initTabs(activeClasses,normalClasses);
+}());
+```
+Here is an example of that usage:
+```
+<ul class="flex-col md:flex-row flex flex-wrap list-none pl-0 mb-0">
+  <li class="flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded text-gray-100 bg-pink-600 sm:mb-4 md:mb-0" data-toggle="tab" href="#home">
+      <i class="mr-2 fas fa-cloud-upload-alt"></i>Home
+    </a>
+  </li>
+  <li class="sm:mb-4 md:mb-0 flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded bg-gray-100 text-pink-600" data-toggle="tab" href="#profile">
+      <i class="mr-2 far fa-bell"></i>Profile
+    </a>
+  </li>
+  <li class="sm:mb-4 md:mb-0 flex-auto text-center">
+    <a class="block py-2 px-4 no-underline rounded bg-gray-100 text-pink-600" data-toggle="tab" href="#message">
+      <i class="mr-2 far fa-calendar-alt"></i>Messages
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+  (function () {
+    initTabs("bg-pink-600 text-gray-100","text-pink-600 bg-gray-100");
+  }());
+</script>
+```
 
 ### Styles
 

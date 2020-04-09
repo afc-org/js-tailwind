@@ -1,31 +1,3 @@
-(function () {
-  initAlert();
-  initTabs();
-}());
-
-/* Alert - Start */
-
-function closeAlert(event){
-  let alert = event.currentTarget.getAttribute("data-target");
-  if(alert){
-    alert = document.querySelectorAll(alert);
-    for (var index = 0; index < alert.length; index++) {
-      alert[index].parentNode.removeChild(alert[index]);
-    }
-  }
-}
-
-function initAlert(){
-  let dataClose = document.querySelectorAll("[data-close='alert']");
-  for (var index = 0; index < dataClose.length; index++) {
-    dataClose[index].addEventListener("click",closeAlert);
-  }
-}
-
-/* Alert - Stop */
-
-/* Tabs - Start */
-
 function changeAtiveTab(event,activeClasses,normalClasses){
   event.preventDefault();
   // prepare classes for querySelectorAll and classList.remove/add
@@ -78,4 +50,6 @@ function initTabs(activeClasses,normalClasses){
   }
 }
 
-/* Tabs - Stop */
+(function () {
+  initTabs();
+}());
