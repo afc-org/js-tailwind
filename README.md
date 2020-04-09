@@ -42,7 +42,8 @@ Add the following CDN to your project:
 ## Components
 
 **Alert**
-You need to add an id on the alert wrapper.
+
+You need to add an `id` on the alert wrapper.
 After that, on the element that you want to add the closing action/event, you need to add
 ```
 data-close="alert"
