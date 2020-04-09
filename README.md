@@ -42,7 +42,7 @@ Add the following CDN to your project:
 - [Alert](#alert)
 - Dropdown (PopperJS)
 - [Menu Collpase](menu-collapse)
-- Modal
+- [Modal](#modal)
 - [Navbar Collpase](navbar-collapse)
 - Popover (PopperJS)
 - Tooltip (PopperJS)
@@ -140,7 +140,104 @@ Here is a full sample code:
 **NOTE**: You can change the following classes `lg:hidden` (button toggler), `lg:flex lg:w-auto` (collapse element), `lg:items-center lg:ml-auto` (list wrapper) and `lg:flex-row` (list wrapper), with any available breakpoint from TailwindCSS (`sm`,`md`,`lg`,`xl`).
 **NOTE**: To check the above example, you need to set your window less then 1023px.
 
-- Modal
+### Modal
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="modal"
+data-target="#modal-id"
+```
+And then, on the modal components you will need to add the following ids:
+- modal wrapper div
+```
+id="modal-id"
+```
+- modal inner div
+```
+id="modal-id-dialog"
+```
+- modal sibling div
+```
+id="modal-id-backdrop"
+```
+Where `modal-id` can be anything
+Here is a full example:
+```
+<button
+  class="capitalize mb-4 bg-yellow-500 border border-solid border-yellow-500 hover:bg-yellow-600 hover:border-yellow-700 active:bg-yellow-600 active:border-yellow-700 text-gray-800 w-full block text-base px-3 py-2 leading-tight rounded font-normal outline-none focus:outline-none align-middle"
+  data-target="#regular-modal"
+  data-toggle="modal"
+  style="transition: all .15s ease"
+>
+  Open Modal
+</button>
+
+<div
+  class="opacity-0 z-50 fixed top-0 left-0 hidden w-full h-full overflow-hidden outline-none focus:outline-none transition-opacity duration-75 ease-linear"
+  id="regular-modal"
+  style="display:none"
+>
+  <div
+    class=" transition-transform duration-300 ease-out relative w-auto m-2 pointer-events-none sm:my-8 sm:mx-auto transform -translate-y-1 sm:max-w-screen-sm"
+    id="regular-modal-dialog"
+  >
+    <div
+      class=" relative flex flex-col w-full pointer-events-auto bg-white border border-solid border-gray-600 rounded outline-none focus:outline-none"
+    >
+      <div
+        class=" flex items-start justify-between p-4 border-b border-solid border-gray-300 rounded-t"
+      >
+        <h5
+          class="text-xl mb-2 font-medium leading-tight leading-normal"
+        >
+          This is a Normy Modal
+        </h5>
+        <button
+          type="button"
+          class=" float-right text-2xl font-bold text-black leading-none bg-transparent border-0 opacity-50 p-4 -mr-4 -mt-4 -mb-4 ml-auto cursor-pointer"
+          data-target="#regular-modal"
+          data-toggle="modal"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class=" relative flex-auto p-4">
+        <p class="mb-4">
+          A long time ago in a galaxy far, far away....
+        </p>
+        <p class="mb-4">
+          The Normy Modal was just a normal-sized modal, working for
+          the better of the empire, day by day, being a loyal
+          soldier, not asking any questions, doing his part for
+          empowering the empire.
+        </p>
+      </div>
+      <div
+        class=" flex flex-wrap items-center justify-end p-3 border-t border-solid border-gray-300 rounded-b"
+      >
+        <button
+          class="m-1 bg-blue-600 border border-solid border-blue-600 hover:bg-blue-700 hover:border-blue-800 active:bg-blue-700 active:border-blue-800 text-white text-base px-3 py-2 leading-tight rounded font-normal outline-none focus:outline-none align-middle"
+          style="transition: all .15s ease"
+        >
+          Save changes
+        </button>
+        <button
+          class="m-1 bg-gray-600 border border-solid border-gray-600 hover:bg-gray-700 hover:border-gray-800 active:bg-gray-700 active:border-gray-800 text-white text-base px-3 py-2 leading-tight rounded font-normal outline-none focus:outline-none align-middle"
+          data-target="#regular-modal"
+          data-toggle="modal"
+          style="transition: all .15s ease"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="hidden opacity-50 fixed inset-0 z-40 bg-black"
+  id="regular-modal-backdrop"
+></div>
+```
 
 ### Navbar Collpase
 
