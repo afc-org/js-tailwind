@@ -40,13 +40,13 @@ Add the following CDN to your project:
 ## Components
 
 - [Alert](#alert)
-- Dropdown (PopperJS)
-- [Menu Collpase](menu-collapse)
-- Modal
-- [Navbar Collpase](navbar-collapse)
-- Popover (PopperJS)
-- Tooltip (PopperJS)
-- [Tab Pills](tab-pills)
+- [Dropdown](#dropdown)
+- [Menu Collpase](#menu-collapse)
+- [Modal](#modal)
+- [Navbar Collpase](#navbar-collapse)
+- [Popover](#popover)
+- [Tooltip](#tooltip)
+- [Tab Pills](#tab-pills)
 
 ## Documentation
 
@@ -87,7 +87,65 @@ Example usage:
   </button>
 </div>
 ```
-- Dropdown (PopperJS)
+
+### Dropdown
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="dropdown"
+data-target="#dropdown-id"
+data-placement="placement"
+```
+Where placement can be one of ["top","bottom","left","right"].
+And on the dropdown menu wrapper element, the following one:
+```
+id="dropdown-id"
+```
+Here is an example:
+```
+<button
+  class="bg-blue-600 border border-solid border-blue-600 hover:bg-blue-700 hover:border-blue-800 active:bg-blue-700 active:border-blue-800 text-white text-base px-3 py-2 leading-tight rounded font-normal outline-none focus:outline-none align-middle"
+  type="button"
+  data-toggle="dropdown"
+  data-target="#dropdown-77650932"
+  data-placement="bottom"
+  style="transition: all .15s ease"
+>
+  primary
+</button>
+
+<div class="hidden" id="dropdown-77650932">
+  <div
+    class="py-2 text-base text-left list-none bg-white border border-solid border-gray-100 rounded"
+    style="min-width:12rem"
+  >
+    <a
+      class="block w-full py-1 px-6 clear-both font-normal text-gray-800 whitespace-no-wrap bg-transparent border-0 hover:text-gray-900 hover:bg-gray-100 active:text-white active:bg-blue-500"
+      href="#pablo"
+    >
+      Item 1
+    </a>
+    <a
+      class="block w-full py-1 px-6 clear-both font-normal text-gray-800 whitespace-no-wrap bg-transparent border-0 hover:text-gray-900 hover:bg-gray-100 active:text-white active:bg-blue-500"
+      href="#pablo"
+    >
+      Item 2
+    </a>
+    <a
+      class="block w-full py-1 px-6 clear-both font-normal text-gray-800 whitespace-no-wrap bg-transparent border-0 hover:text-gray-900 hover:bg-gray-100 active:text-white active:bg-blue-500"
+      href="#pablo"
+    >
+      Item 3
+    </a>
+    <a
+      class="block w-full py-1 px-6 clear-both font-normal text-gray-800 whitespace-no-wrap bg-transparent border-0 hover:text-gray-900 hover:bg-gray-100 active:text-white active:bg-blue-500"
+      href="#pablo"
+    >
+      Item 4
+    </a>
+  </div>
+</div>
+```
 
 ### Menu Collpase
 
@@ -189,8 +247,85 @@ Here is a full sample code:
 **NOTE**: you can change the following classes `lg:hidden` (button toggler), `lg:flex lg:w-auto` (collapse element), `lg:items-center lg:ml-auto` (list wrapper) and `lg:flex-row` (list wrapper), with any available breakpoint from TailwindCSS (`sm`,`md`,`lg`,`xl`).
 **NOTE**: To check the above example, you need to set your window less then 1023px.
 
-- Popover (PopperJS)
-- Tooltip (PopperJS)
+### Popover
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="popover"
+data-target="#popover-id"
+data-placement="placement"
+```
+Where placement can be one of ["top","bottom","left","right"].
+And on the popover element, the following one:
+```
+id="popover-id"
+```
+Here is an example:
+```
+<button
+  class=" text-sm px-2 py-1 leading-normal bg-blue-600 border border-solid border-blue-600 hover:bg-blue-700 hover:border-blue-800 active:bg-blue-700 active:border-blue-800 text-white rounded font-normal outline-none focus:outline-none align-middle"
+  data-toggle="popover"
+  data-target="#popover-75076477"
+  data-placement="right"
+  style="transition: all .15s ease"
+>
+  On right
+</button>
+
+<div class="hidden" id="popover-75076477">
+  <div
+    class="border-0 block z-50 font-normal leading-normal text-sm text-left no-underline break-words rounded bg-white border border-solid border-gray-400"
+    style="max-width:276px"
+  >
+    <h3
+      class="font-medium leading-tight py-2 px-3 mb-0 border-b border-solid border-gray-200 rounded-t text-base bg-gray-100"
+    >
+      Popover on right
+    </h3>
+    <div class="py-2 px-3 text-gray-900">
+      A long time ago in a galaxy far, far away....
+    </div>
+  </div>
+</div>
+```
+
+### Tooltip
+
+You will need a toggler element, on which to add the following attributes:
+```
+data-toggle="tooltip"
+data-target="#tooltip-id"
+data-placement="placement"
+```
+Where placement can be one of ["top","bottom","left","right"].
+And on the tooltip element, the following one:
+```
+id="tooltip-id"
+```
+Here is an example:
+```
+<button
+  class=" text-sm px-2 py-1 leading-normal bg-blue-600 border border-solid border-blue-600 hover:bg-blue-700 hover:border-blue-800 active:bg-blue-700 active:border-blue-800 text-white rounded font-normal outline-none focus:outline-none align-middle"
+  data-toggle="tooltip"
+  data-target="#tooltip-87505381"
+  style="transition: all .15s ease"
+>
+  On top
+</button>
+<div class="hidden" id="tooltip-87505381">
+  <div
+    class="border-0 block z-50 font-normal leading-normal text-sm text-left no-underline break-words rounded"
+    style="max-width:276px"
+  >
+    <div
+      class="py-1 px-2 text-center rounded text-white bg-black"
+      style="max-width:200px"
+    >
+      Tooltip on top
+    </div>
+  </div>
+</div>
+```
 
 ### Tab Pills
 
