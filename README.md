@@ -164,7 +164,7 @@ If you wish to change the active classes of the anchor elements, and the non-act
   initTabs(activeClasses,normalClasses);
 }());
 ```
-Here an example of that usage:
+Here is an example of that usage:
 ```
 <ul class="flex-col md:flex-row flex flex-wrap list-none pl-0 mb-0">
   <li class="flex-auto text-center">
