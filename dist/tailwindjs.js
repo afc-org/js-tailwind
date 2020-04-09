@@ -1,8 +1,11 @@
 (function () {
   initAlert();
-  initTabs();
   initCollapse();
+  initDropdowns();
   initModal();
+  initPopovers();
+  initTabs();
+  initTooltips();
 }());
 
 /* Alert - Start */
@@ -97,6 +100,75 @@ function initCollapse(){
 }
 
 /* Collpase - Stop */
+
+/* Popper Toggler - Start */
+
+function togglePopper(event){
+  let element = event.currentTarget;
+  let popperID = element.getAttribute("data-target");
+  let placement = element.getAttribute("data-placement");
+  let popperElement = document.querySelector(popperID);
+  let popperInnerElement = popperElement.querySelector("div");
+  let popper = Popper.createPopper(element, popperElement, {
+    placement: (placement ? placement : 'bottom')
+  });
+  popperElement.classList.toggle("hidden");
+  placement = popper.state.placement
+  let marginClass;
+  switch (placement) {
+    case "bottom":
+      marginClass = "mt-3"
+      break;
+    case "top":
+      marginClass = "mb-3"
+      break;
+    case "left":
+      marginClass = "mr-3"
+      break;
+    case "right":
+      marginClass = "ml-3"
+      break;
+    default:
+      break;
+  }
+  popperInnerElement.classList.toggle(marginClass);
+}
+
+/* Popper Toggler - Stop */
+
+/* Popovers - Start */
+
+function initPopovers(){
+  let popoverData = document.querySelectorAll("[data-toggle='popover']");
+  for (var index = 0; index < popoverData.length; index++) {
+    popoverData[index].addEventListener("click",togglePopper);
+  }
+}
+
+/* Popovers - Stop */
+
+/* Tooltips - Start */
+
+function initTooltips(){
+  let tooltipData = document.querySelectorAll("[data-toggle='tooltip']");
+  for (var index = 0; index < tooltipData.length; index++) {
+    tooltipData[index].addEventListener("mouseenter",togglePopper);
+    tooltipData[index].addEventListener("mouseleave",togglePopper);
+  }
+}
+
+/* Tooltips - Stop */
+
+/* Dropdowns - Start */
+
+function initDropdowns(){
+  let dropdownData = document.querySelectorAll("[data-toggle='dropdown']");
+  for (var index = 0; index < dropdownData.length; index++) {
+    dropdownData[index].addEventListener("click",togglePopper);
+  }
+}
+
+/* Dropdowns - Stop */
 
 /* Modal - Start */
 
