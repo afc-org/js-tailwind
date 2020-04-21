@@ -1,12 +1,12 @@
-# @afc/js-tailwind
+# @afc-org/js-tailwind
 
 ![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/afc-org/js-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/afc-org/js-tailwind.svg)</a> <a href="https://github.com/afc-org/js-tailwind?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/afc-org/js-tailwind.svg)</a>
 
-<div align="center"><img src="./assets/logos/javascript-tailwind-logo.png" alt="@afc/js-tailwind" width="300"/></div>
+<div align="center"><img src="./assets/logos/javascript-tailwind-logo.png" alt="@afc-org/js-tailwind" width="300"/></div>
 
 ### A dynamic plugin extension for TailwindCSS.
 
-**@afc/js-tailwind** is Free and Open Source. It does not change or add any CSS to the already one from TailwindCSS, It comes with code written with javascript as an extension to TailwindCSS for you to have dynamic components inside your app as well.
+**@afc-org/js-tailwind** is Free and Open Source. It does not change or add any CSS to the already one from TailwindCSS, It comes with code written with javascript as an extension to TailwindCSS for you to have dynamic components inside your app as well.
 
 It comes with 8 dynamic components, that any website needs.
 We plan on implementing more, in the weeks to come.
@@ -50,9 +50,9 @@ Add the following CDN to your project:
 
 ## Documentation
 
-After you have installed `@afc/js-tailwind` into your project, you can import and use our components like so:
+After you have installed `@afc-org/js-tailwind` into your project, you can import and use our components like so:
 ```
-<script src="path/to/node_module/@afc/js-tailwind/dist/js-tailwind.min.js"></script>
+<script src="path/to/node_module/@afc-org/js-tailwind/dist/js-tailwind.min.js"></script>
 ```
 Or, you can add it from our CDN, and no installation will be required:
 ```
@@ -539,7 +539,7 @@ Then, you can import your styles inside your files like so:
 
 ## Dependencies
 
-**@afc/js-tailwindj** to properly work needs the following dependencies:
+**@afc-org/js-tailwindj** to properly work needs the following dependencies:
 ```
 <!-- Development version -->
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
@@ -562,7 +562,7 @@ At present, we officially aim to support the last two versions of the following 
 
 We use GitHub Issues as the official bug tracker for the Angular Landing Page. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the @afc/js-tailwind.
+1. Make sure that you are using the latest version of the @afc-org/js-tailwind.
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
@@ -572,7 +572,7 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 
 ## Licensing
 
-- Copyright 2020 @afc/js-tailwind
+- Copyright 2020 @afc-org/js-tailwind
 
 - Licensed under <a href="https://github.com/afc-org/js-tailwind/blob/master/LICENSE.md" target="_blank">MIT</a>
 

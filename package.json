@@ -1,5 +1,5 @@
 {
-  "name": "@afc/js-tailwind",
+  "name": "@afc-org/js-tailwind",
   "version": "0.1.0",
   "description": "Dynamic components for Tailwindcss and JavaScript",
   "main": "index.js",
@@ -29,7 +29,7 @@
     "tailwindjs",
     "afc-org",
     "afc",
-    "@afc"
+    "@afc-org"
   ],
   "author": "afc-org",
   "license": "MIT",
