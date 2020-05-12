@@ -3,6 +3,7 @@ function toggleModal(event){
   let modal = document.querySelector(modalID);
   let modalDialog = document.querySelector(modalID+"-dialog");
   let modalBackdrop = document.querySelector(modalID+"-backdrop");
+  zoomIn(modalDialog);
   modalBackdrop.classList.toggle("hidden");
   modalBackdrop.classList.toggle("flex");
   if (modal.classList.contains("hidden")) {
