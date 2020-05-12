@@ -26,6 +26,7 @@ function togglePopper(event){
     default:
       break;
   }
+  fadeIn(popperElement, 500);
   popperInnerElement.classList.toggle(marginClass);
 }
 
