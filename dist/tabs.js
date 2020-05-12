@@ -45,8 +45,10 @@ function initTabs(activeClasses,normalClasses){
     normalClasses = normalClasses ? normalClasses:"text-blue-600 bg-white";
     changeAtiveTab(event,activeClasses,normalClasses)
   }
+  const toggleAnimation = () => Array.from(dataTabs).forEach(el => zoomIn(document.querySelector(el.attributes.href.value)));
   for (var index = 0; index < dataTabs.length; index++) {
     dataTabs[index].addEventListener("click",toggleFunction);
+    dataTabs[index].addEventListener("click",toggleAnimation);
   }
 }
 
