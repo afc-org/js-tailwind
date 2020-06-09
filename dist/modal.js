@@ -3,6 +3,7 @@ function toggleModal(event){
   let modal = document.querySelector(modalID);
   let modalDialog = document.querySelector(modalID+"-dialog");
   let modalBackdrop = document.querySelector(modalID+"-backdrop");
+  zoomIn(modalDialog);
   modalBackdrop.classList.toggle("hidden");
   modalBackdrop.classList.toggle("flex");
   if (modal.classList.contains("hidden")) {
@@ -11,12 +12,8 @@ function toggleModal(event){
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       modal.classList.remove("opacity-0");
-      modalDialog.classList.remove("-translate-y-1");
-      modalDialog.classList.add("translate-y-1");
     },30);
   } else {
-    modalDialog.classList.remove("translate-y-1");
-    modalDialog.classList.add("-translate-y-1");
     setTimeout(()=>{
       modal.style.display = "none";
       modal.classList.add("hidden");

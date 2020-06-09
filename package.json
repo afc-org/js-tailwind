@@ -1,5 +1,5 @@
 {
-  "name": "@tailwindjs/tailwindjs",
+  "name": "@afc-org/js-tailwind",
   "version": "0.1.0",
   "description": "Dynamic components for Tailwindcss and JavaScript",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tailwindjs/tailwindjs.git"
+    "url": "git+https://github.com/afc-org/js-tailwind.git"
   },
   "keywords": [
     "javascript",
@@ -21,14 +21,20 @@
     "framework",
     "tailwind-framework",
     "javascript-framework",
+    "javascript-tailwindjs",
     "javascript-tailwind",
+    "js-tailwind",
     "javascript-tailwindcss",
-    "tailwindjs"
+    "js-tailwindcss",
+    "tailwindjs",
+    "afc-org",
+    "afc",
+    "@afc-org"
   ],
-  "author": "@tailwindjs",
+  "author": "afc-org",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tailwindjs/tailwindjs/issues"
+    "url": "https://github.com/afc-org/js-tailwind/issues"
   },
-  "homepage": "https://github.com/tailwindjs/tailwindjs#readme"
+  "homepage": "https://github.com/afc-org/js-tailwind#readme"
 }

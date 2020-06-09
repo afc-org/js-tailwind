@@ -1,10 +1,14 @@
 function closeAlert(event){
   let alert = event.currentTarget.getAttribute("data-target");
+  let container = document.querySelector(alert);
   if(alert){
-    alert = document.querySelectorAll(alert);
-    for (var index = 0; index < alert.length; index++) {
-      alert[index].parentNode.removeChild(alert[index]);
-    }
+    fadeOut(container, 500);
+    setTimeout(() => {
+      alert = document.querySelectorAll(alert);
+      for (var index = 0; index < alert.length; index++) {
+        alert[index].parentNode.removeChild(alert[index]);
+      }
+    }, 500);
   }
 }
 

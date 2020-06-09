@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 https://github.com/tailwindjs/tailwindjs
+Copyright (c) 2020 https://github.com/afc-org/js-tailwind
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
