@@ -12,12 +12,8 @@ function toggleModal(event){
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       modal.classList.remove("opacity-0");
-      modalDialog.classList.remove("-translate-y-1");
-      modalDialog.classList.add("translate-y-1");
     },30);
   } else {
-    modalDialog.classList.remove("translate-y-1");
-    modalDialog.classList.add("-translate-y-1");
     setTimeout(()=>{
       modal.style.display = "none";
       modal.classList.add("hidden");
