@@ -1,42 +1,47 @@
-function togglePopper(event){
-  let element = event.currentTarget;
-  let popperID = element.getAttribute("data-target");
-  let placement = element.getAttribute("data-placement");
-  let popperElement = document.querySelector(popperID);
-  let popperInnerElement = popperElement.querySelector("div");
-  let popper = Popper.createPopper(element, popperElement, {
-    placement: (placement ? placement : 'bottom')
-  });
-  popperElement.classList.toggle("hidden");
-  placement = popper.state.placement
+const togglePopper = e => {
   let marginClass;
+
+  const element             = e.currentTarget;
+  const popperID            = element.getAttribute("data-target");
+  let placement             = element.getAttribute("data-placement");
+  const popperElement       = document.querySelector(popperID);
+  const popperInnerElement  = popperElement.querySelector("div");
+
+  Popper.createPopper(element, popperElement, {
+    placement: (placement ? placement : "right")
+  });
+
   switch (placement) {
     case "bottom":
-      marginClass = "mt-3"
+      marginClass = "mt-3";
       break;
     case "top":
-      marginClass = "mb-3"
+      marginClass = "mb-3";
       break;
     case "left":
-      marginClass = "mr-3"
+      marginClass = "mr-3";
       break;
     case "right":
-      marginClass = "ml-3"
-      break;
-    default:
+      marginClass = "ml-3";
       break;
   }
-  fadeIn(popperElement, 500);
-  popperInnerElement.classList.toggle(marginClass);
-}
 
-function initPopovers(){
-  let popoverData = document.querySelectorAll("[data-toggle='popover']");
-  for (var index = 0; index < popoverData.length; index++) {
-    popoverData[index].addEventListener("click",togglePopper);
+  if (popperElement.classList.contains("hidden")) {
+    fadeIn(popperElement, 200);
+    popperElement.classList.remove("hidden");
+    popperInnerElement.classList.add(marginClass);
+  } else {
+    fadeOut(popperElement, 200);
+    
+    setTimeout(() => {
+      popperElement.classList.add("hidden");
+      popperInnerElement.classList.remove(marginClass);
+    }, 180);
   }
 }
 
-(function () {
-  initPopovers();
-}());
+const initPopovers = () => {
+  const popoverData = document.querySelectorAll("[data-toggle='popover']");
+
+  for (let i of popoverData) i.addEventListener("click", togglePopper);
+}
