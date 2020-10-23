@@ -1,24 +1,19 @@
-function closeAlert(event){
-  let alert = event.currentTarget.getAttribute("data-target");
-  let container = document.querySelector(alert);
-  if(alert){
-    fadeOut(container, 500);
-    setTimeout(() => {
-      alert = document.querySelectorAll(alert);
-      for (var index = 0; index < alert.length; index++) {
-        alert[index].parentNode.removeChild(alert[index]);
-      }
-    }, 500);
+const closeAlert = e => {
+  let alert = e.currentTarget.getAttribute("data-target");
+
+  if (alert) {
+    alert = document.querySelectorAll(alert);
+
+    for (let i of alert) {
+      fadeOut(i);
+      
+      setTimeout(() => i.remove(), 450);
+    }
   }
 }
 
-function initAlert(){
-  let dataClose = document.querySelectorAll("[data-close='alert']");
-  for (var index = 0; index < dataClose.length; index++) {
-    dataClose[index].addEventListener("click",closeAlert);
-  }
-}
+const initAlert = () => {
+  const dataClose = document.querySelectorAll("[data-close='alert'");
 
-(function () {
-  initAlert();
-}());
+  for (let i of dataClose) i.addEventListener("click", closeAlert);
+}
