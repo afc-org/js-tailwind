@@ -1,15 +1,16 @@
-function togglePopper(event){
-  let element = event.currentTarget;
-  let popperID = element.getAttribute("data-target");
-  let placement = element.getAttribute("data-placement");
-  let popperElement = document.querySelector(popperID);
-  let popperInnerElement = popperElement.querySelector("div");
-  let popper = Popper.createPopper(element, popperElement, {
+const toggleTooltips = e => {
+  let marginClass;
+
+  const element             = e.currentTarget;
+  const popperID            = element.getAttribute("data-target");
+  const placement           = element.getAttribute("data-placement");
+  const popperElement       = document.querySelector(popperID);
+  const popperInnerElement  = popperElement.querySelector("div");
+
+  popper = Popper.createPopper(element, popperElement, {
     placement: (placement ? placement : 'bottom')
   });
-  popperElement.classList.toggle("hidden");
-  placement = popper.state.placement
-  let marginClass;
+
   switch (placement) {
     case "bottom":
       marginClass = "mt-3"
@@ -23,20 +24,27 @@ function togglePopper(event){
     case "right":
       marginClass = "ml-3"
       break;
-    default:
-      break;
   }
-  popperInnerElement.classList.toggle(marginClass);
+
+  if (popperElement.classList.contains("hidden")) {
+    fadeIn(popperElement, 200);
+    popperElement.classList.remove("hidden");
+    popperInnerElement.classList.add(marginClass);
+  } else {
+    fadeOut(popperElement, 200);
+    
+    setTimeout(() => {
+      popperElement.classList.add("hidden");
+      popperInnerElement.classList.remove(marginClass);
+    }, 180);
+  }
 }
 
-function initTooltips(){
-  let tooltipData = document.querySelectorAll("[data-toggle='tooltip']");
-  for (var index = 0; index < tooltipData.length; index++) {
-    tooltipData[index].addEventListener("mouseenter",togglePopper);
-    tooltipData[index].addEventListener("mouseleave",togglePopper);
+const initTooltips = () => {
+  const tooltipData = document.querySelectorAll("[data-toggle='tooltip'");
+
+  for (let i of tooltipData) {
+    i.addEventListener("mouseenter", toggleTooltips);
+    i.addEventListener("mouseleave", toggleTooltips);
   }
 }
-
-(function () {
-  initTooltips();
-}());

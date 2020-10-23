@@ -1,15 +1,11 @@
-function toggleCollapse(event){
-  let collapseID = event.currentTarget.getAttribute("data-target")
+const toggleCollapse = e => {
+  const collapseID  = e.currentTarget.getAttribute("data-target");
+
   document.querySelector(collapseID).classList.toggle("hidden");
 }
 
-function initCollapse(){
-  let dataCollapse = document.querySelectorAll("[data-toggle='collapse']");
-  for (var index = 0; index < dataCollapse.length; index++) {
-    dataCollapse[index].addEventListener("click",toggleCollapse);
-  }
+const initCollapse = () => {
+  const dataCollapse = document.querySelectorAll("[data-toggle='collapse']");
+  
+  for (let i of dataCollapse) i.addEventListener("click",toggleCollapse);
 }
-
-(function () {
-  initCollapse();
-}());
